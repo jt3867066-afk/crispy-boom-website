@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Boom - La Auténtica Choribola</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="https://ibb.co/KzjkSTQF" id="logo-link">
+                    <img src="https://i.ibb.co/Cs5ZDRXh/IMG-20250915-170538.png" 
+                         alt="Crispy Boom Logo" 
+                         style="height: 50px; width: auto; border-radius: 8px;">
+                </a>
+                <div class="logo-text">
+                    <h1 id="crispy-boom-text">Crispy Boom</h1>
+                    <p>Crujiente al probar, difícil de olvidar</p>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#producto">Producto</a>
+                <a href="#pedido">Pedir</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Login Administrador</h2>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-username">Usuario:</label>
+                    <input type="text" id="admin-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Contraseña:</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button type="button" class="btn btn-outline" onclick="closeLoginModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Promotion Banner -->
+    <div class="promotion-banner">
+        🎉 <span class="highlight">DOMINGOS 2x1</span> En caja personal - Pague 2 choribolas y lleve 1 más GRATIS 🎉
+    </div>
+
+    <!-- Main Content (Customer View) -->
+    <main id="customer-view">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero-container">
+                <h1>CHORIBOLA</h1>
+                <p>La explosión perfecta de dulce, picante y crujiente</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary pulse" onclick="scrollToOrder()">
+                        <i class="fas fa-bolt"></i> Ordenar Ahora
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToProduct()">
+                        <i class="fas fa-info-circle"></i> Conocer Más
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="section" id="producto">
+            <div class="container">
+                <h2 class="section-title">La Choribola</h2>
+                <div class="product-description">
+                    <p>Descubre nuestra exclusiva <strong>Choribola</strong>, una creación única que combina sabores explosivos en cada bocado.</p>
+                </div>
+
+                <!-- Carousel -->
+                <div class="carousel">
+                    <div class="carousel-inner" id="carousel-inner">
+                        <!-- Slide 1: Choribola Principal -->
+                        <div class="carousel-item active">
+                            <img src="https://i.ibb.co/QFMRWsks/1760427991.png" 
+                                 alt="Choribola Crispy Boom" 
+                                 class="carousel-img">
+                            <div class="carousel-caption">
+                                <h3>Choribola Recién Hecha</h3>
+                                <p>Crujiente por fuera, explosión de sabores por dentro</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: Choribola -->
+                        <div class="carousel-item">
+                            <img src="https://i.ibb.co/MxzVTx4v/1760423923.png" 
+                                 alt="Choribola Crispy Boom" 
+                                 class="carousel-img">
+                            <div class="carousel-caption">
+                                <h3>Choribola Recién Hecha</h3>
+                                <p>Preparadas con ingredientes frescos y de calidad</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Choribola -->
+                        <div class="carousel-item">
+                            <img src="https://i.ibb.co/nqK3S2Nt/1760414258.png" 
+                                 alt="Choribola Crispy Boom" 
+                                 class="carousel-img">
+                            <div class="carousel-caption">
+                                <h3>Choribola Recién Hecha</h3>
+                                <p>El sabor que todos prefieren</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-highlights">
+                    <div class="highlight fade-in">
+                        <div class="highlight-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Núcleo Explosivo</h3>
+                        <p>Chorizo artesanal y queso derretido en el corazón</p>
+                    </div>
+                    <div class="highlight fade-in">
+                        <div class="highlight-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Cubierta Dorada</h3>
+                        <p>Plátano maduro ahumado que envuelve el sabor</p>
+                    </div>
+                    <div class="highlight fade-in">
+                        <div class="highlight-icon">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <h3>Baño Especial</h3>
+                        <p>Huevos batidos y bañada en tostado triturado</p>
+                    </div>
+                    <div class="highlight fade-in">
+                        <div class="highlight-icon">
+                            <i class="fas fa-crunch"></i>
+                        </div>
+                        <h3>Textura Perfecta</h3>
+                        <p>Crujiente por fuera, suave y sabroso por dentro</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cajitas Section -->
+        <section class="section" style="background: var(--light);">
+            <div class="container">
+                <h2 class="section-title">Nuestros Empaques</h2>
+                <div class="product-highlights">
+                    <div class="highlight">
+                        <img src="https://i.ibb.co/tMb1N7td/IMG-20250915-170950.jpg" 
+                             alt="Caja Personal Crispy Boom" 
+                             class="product-img">
+                        <h3>Caja Personal</h3>
+                        <p>Perfecta para un gusto individual - 2 Choribolas + 1 Salsa</p>
+                        <div class="price">$7.000</div>
+                    </div>
+                    
+                    <div class="highlight">
+                        <img src="https://i.ibb.co/Y48bT8Wy/IMG-20250915-170714.jpg" 
+                             alt="Caja Familiar Crispy Boom" 
+                             class="product-img">
+                        <h3>Caja Familiar</h3>
+                        <p>Ideal para compartir en familia - 6 Choribolas + 3 Salsas</p>
+                        <div class="price">$21.000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Salsas Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Nuestras Salsas</h2>
+                <div class="product-highlights">
+                    <div class="highlight">
+                        <img src="https://i.ibb.co/s9BNHbdz/1760426960.png" 
+                             alt="Salsa de Maíz" 
+                             class="salsa-img">
+                        <h3>Salsa de Maíz</h3>
+                        <p>Dulce y cremosa con toque de maíz fresco</p>
+                    </div>
+                    
+                    <div class="highlight">
+                        <img src="https://i.ibb.co/KjVVWGZV/1760427691.png" 
+                             alt="Salsa de Tocineta" 
+                             class="salsa-img">
+                        <h3>Salsa de Tocineta</h3>
+                        <p>Ahumada y deliciosa con trozos de tocineta</p>
+                    </div>
+                    
+                    <div class="highlight">
+                        <img src="https://i.ibb.co/Y4knVX1D/1760427419.png" 
+                             alt="Salsa Ahumada" 
+                             class="salsa-img">
+                        <h3>Salsa Ahumada</h3>
+                        <p>Intensa y especiada con toque ahumado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="section video-section">
+            <div class="container">
+                <h2 class="section-title">Vive la Experiencia</h2>
+                <div class="video-container">
+                    <video id="video-player" width="100%" height="400" autoplay muted loop controls>
+                        <source src="https://drive.google.com/uc?export=download&id=1gFNuumQI27k_C33RX5L_0pqqAuwqC-pl" type="video/mp4">
+                        Tu navegador no soporta el elemento video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Section -->
+        <section class="section order-section" id="pedido">
+            <div class="container">
+                <h2 class="section-title">Realiza tu Pedido</h2>
+                
+                <div class="order-options">
+                    <div class="order-card" id="personal-card">
+                        <div class="promo-badge" id="promo-badge">2x1 DOMINGOS</div>
+                        <h3>Caja Personal</h3>
+                        <div class="price">
+                            <span class="original-price" id="original-price">$10.500</span>
+                            <span id="current-price">$7.000</span>
+                        </div>
+                        <p class="includes">2 Choribolas + 1 Salsa a elección</p>
+                        <p class="includes promo-text" id="promo-text">🎁 Domingos: Lleva 3 choribolas por $7.000</p>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity('personal', -1)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="personal-quantity">0</span>
+                            <button class="quantity-btn" onclick="changeQuantity('personal', 1)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="salsas-selection">
+                            <p><strong>Elige tu salsa:</strong></p>
+                            <label class="salsa-option">
+                                <input type="radio" name="personal-salsa" value="maiz" onchange="selectSalsa('maiz')"> 
+                                <div class="salsa-option-content">
+                                    <div class="salsa-color" style="background: #FFD700;"></div>
+                                    Salsa de Maíz
+                                </div>
+                            </label>
+                            <label class="salsa-option">
+                                <input type="radio" name="personal-salsa" value="tocineta" onchange="selectSalsa('tocineta')">
+                                <div class="salsa-option-content">
+                                    <div class="salsa-color" style="background: #8B4513;"></div>
+                                    Salsa de Tocineta
+                                </div>
+                            </label>
+                            <label class="salsa-option">
+                                <input type="radio" name="personal-salsa" value="ahumada" onchange="selectSalsa('ahumada')">
+                                <div class="salsa-option-content">
+                                    <div class="salsa-color" style="background: #696969;"></div>
+                                    Salsa Ahumada
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="order-card" id="familiar-card">
+                        <h3>Caja Familiar</h3>
+                        <div class="price">$21.000</div>
+                        <p class="includes">6 Choribolas + Las 3 Salsas de la casa</p>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity('familiar', -1)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="familiar-quantity">0</span>
+                            <button class="quantity-btn" onclick="changeQuantity('familiar', 1)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="salsas-selection">
+                            <p><strong>Incluye las 3 salsas:</strong></p>
+                            <p>✓ Salsa de Maíz</p>
+                            <p>✓ Salsa de Tocineta</p>
+                            <p>✓ Salsa Ahumada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Resumen de tu Pedido</h3>
+                    <div class="total-price" id="total-display">Total: $0</div>
+                    <p class="delivery-fee">+ $2.000 por domicilio a toda la ciudad</p>
+                    
+                    <button class="whatsapp-btn" id="open-customer-form">
+                        <i class="fab fa-whatsapp"></i>
+                        Enviar Pedido por WhatsApp
+                    </button>
+                    
+                    <p class="note">Al hacer clic, completarás tus datos y se abrirá WhatsApp con tu pedido listo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QR Code Section -->
+        <section class="qr-section">
+            <div class="container">
+                <h2 class="section-title">Acceso Rápido</h2>
+                <div class="qr-container">
+                    <div class="qr-code">
+                        <img src="https://i.ibb.co/9HhvvJqL/frame.png" 
+                             alt="Código QR Crispy Boom" 
+                             style="width: 200px; height: 200px; border-radius: 10px;">
+                    </div>
+                    <p class="qr-link">
+                        <strong>Enlace directo:</strong><br>
+                        <a href="https://crispyboom3.netlify.app/#producto" style="color: var(--primary); font-weight: bold;">
+                            https://crispyboom3.netlify.app/#producto
+                        </a>
+                    </p>
+                    <p class="qr-description">
+                        Escanea el código o haz clic en el enlace
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="section comments-section" style="background: var(--light);">
+            <div class="container">
+                <h2 class="section-title">Comentarios de Clientes</h2>
+                <div class="comments-container">
+                    <!-- Add Comment Form -->
+                    <div class="add-comment-form">
+                        <h3>Deja tu comentario</h3>
+                        <form id="comment-form">
+                            <div class="form-group">
+                                <input type="text" id="comment-name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="comment-text" placeholder="Escribe tu comentario..." rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Publicar Comentario
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div class="comments-list" id="comments-list">
+                        <!-- Los comentarios se cargan dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-section" id="contacto">
+            <div class="container">
+                <h2 class="section-title">Síguenos en Redes</h2>
+                <p>Mantente al día con nuestras novedades y promociones</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1CQjdoEQoo/" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/crispyboom3" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@crispyboom3" class="social-link tiktok" target="_blank">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="admin-view">
+        <div class="admin-header">
+            <div class="admin-container">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2>Panel Administrador</h2>
+                    <div class="admin-user">
+                        <span id="admin-welcome">Hola, Admin</span>
+                        <button class="btn btn-danger" id="admin-logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Salir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-container">
+            <!-- Admin Navigation -->
+            <div class="admin-nav">
+                <button class="admin-tab active" data-tab="dashboard">
+                    <i class="fas fa-chart-bar"></i> Dashboard
+                </button>
+                <button class="admin-tab" data-tab="orders">
+                    <i class="fas fa-shopping-cart"></i> Pedidos
+                </button>
+                <button class="admin-tab" data-tab="products">
+                              
